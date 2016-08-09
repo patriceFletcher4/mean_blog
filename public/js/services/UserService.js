@@ -22,8 +22,14 @@
     function createUser(userObj){
       return $http.post(baseUrl, userObj);
     }
-    function getOneUser(userId){}
-    function updateUser(userId, updateInfo){}
-    function deleteUser(userId){}
+    function getOneUser(userId){
+      return $http.get(baseUrl + userId);
+    }
+    function updateUser(userId, updateInfo){
+      return $http.update(baseUrl, updateInfo);
+    }
+    function deleteUser(userId){
+      return $http.delete(baseUrl + userId);
+    }
   }
 })();
