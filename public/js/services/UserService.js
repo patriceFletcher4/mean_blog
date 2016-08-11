@@ -28,7 +28,6 @@
     function updateUser(userId, updateInfo){
       return $http.put(baseUrl + userId, updateInfo)
     }
-
     function deleteUser(userId){
       return $http.delete(baseUrl+ userId);
     }

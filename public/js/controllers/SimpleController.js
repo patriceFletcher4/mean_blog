@@ -3,9 +3,9 @@
   angular.module('ngBlog')
         .controller('SimpleController', SimpleController);
 
-  SimpleController.$inject = ['$scope', 'UserService'];
+  SimpleController.$inject = ['$scope', 'UserService', 'PostService', 'CommentService'];
 
-  function SimpleController($scope, UserService){
+  function SimpleController($scope, UserService, PostService, CommentService){
     $scope.message = 'Hey! Angular Works!';
 
     UserService.getAllUsers()
@@ -16,7 +16,7 @@
       firstName: 'Lil',
       lastName: 'Jon',
       age: 41,
-      email: 'lil@jon434335edasd65.com'
+      email: 'lil@jon434335edafsd65.com'
     };
     UserService.createUser(userObj)
               .then(function(response){
@@ -38,5 +38,49 @@
             console.log(response);
           });
 
-  }
+      PostService.getAllPosts()
+        .then(function(response){
+          console.log(response);
+      });
+    var postObj = {
+      title: "Please work",
+      body: "You will work",
+    }
+
+    PostService.createPost(postObj)
+        .then(function(response){
+          console.log(response);
+        });
+
+      PostService.updatePost(postId, 'help why you no work')
+          .then(function(response){
+            console.log(response);
+          });
+      }
+
+    PostService.deletePost(postId)
+        .then(function(response){
+          console.log(response);
+        });
+
+    CommentService.createComment(commentObj)
+        .then(function(response){
+          console.log(response);
+        });
+        var commentObj = {
+          body: "I want something to work",
+        }
+
+    CommentService.updateComment(commentId, updateInfo)
+        .then(function(response){
+          console.log(response);
+        });
+
+
+  CommentService.deleteComment(commentId)
+      .then(function(response){
+        console.log(response);
+      });
+
+
 })();
