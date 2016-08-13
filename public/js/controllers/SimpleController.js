@@ -42,20 +42,21 @@
         .then(function(response){
           console.log(response);
       });
-    var postObj = {
-      title: "Please work",
-      body: "You will work",
-    }
+
 
     PostService.createPost(postObj)
         .then(function(response){
           console.log(response);
         });
 
-      PostService.updatePost(postId, 'help why you no work')
+      PostService.updatePost(postId,)
           .then(function(response){
             console.log(response);
           });
+      var postObj =
+          author: '57abbc63cda1221100f4b4a9'
+          title: "Please work",
+          body: "You will work",
       }
 
     PostService.deletePost(postId)
