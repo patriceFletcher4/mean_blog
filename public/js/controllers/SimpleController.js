@@ -8,6 +8,7 @@
   function SimpleController($scope, UserService, PostService, CommentService){
     $scope.message = 'Hey! Angular Works!';
 
+
     UserService.getAllUsers()
               .then(function(response){
                 console.log(response);
@@ -64,13 +65,15 @@
           console.log(response);
         });
 
+    CommentService.getAllComments()
+        .then(function(response){
+          console.log('Function getAllComments: ', response);
+        });
+
     CommentService.createComment(commentObj)
         .then(function(response){
           console.log(response);
         });
-        var commentObj = {
-          body: "I want something to work",
-        }
 
     CommentService.updateComment(commentId, updateInfo)
         .then(function(response){
