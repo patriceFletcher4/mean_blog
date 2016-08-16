@@ -1,25 +1,29 @@
 
 <form ng-submit="vm.onSubmit()">
+  
   <div class="form-group">
     <label for="name">First Name</label>
     <input type="text" class="form-control" id="firstName" placeholder="First Name" ng-model="vm.credentials.name">
   </div>
+
   <div class="form-group">
     <label for="name">Last Name</label>
     <input type="text" class="form-control" id="lastName" placeholder="Last Name" ng-model="vm.credentials.name">
   </div>
 
   <div class="form-group">
+    <label for="password">Age</label>
+    <input type="password" class="form-control" id="age" placeholder="Age" ng-model="vm.credentials.password">
+  </div>
+
+  <div class="form-group">
     <label for="email">Email address</label>
     <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="vm.credentials.email">
   </div>
+
   <div class="form-group">
     <label for="password">Password</label>
     <input type="password" class="form-control" id="password" placeholder="Password" ng-model="vm.credentials.password">
-  </div>
-  <div class="form-group">
-    <label for="password">Age</label>
-    <input type="password" class="form-control" id="age" placeholder="Age" ng-model="vm.credentials.password">
   </div>
   <button type="submit" class="btn btn-default">Sign Up!</button>
 </form>

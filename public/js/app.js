@@ -1,2 +1,2 @@
 
-angular.module('ngBlog', []);
+angular.module('ngBlog', ['ngRoute']);
